@@ -4,9 +4,12 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
   def index
+    # TODO extract this into a Service object
+
     q = Work.joins(:authors).ransack(params[:q])
     works = q.result(distinct: true)
-    render locals: { works: works, q: q }
+    sorted_works = works.order :title
+    render locals: { works: sorted_works, q: q }
   end
 
   # GET /works/1
