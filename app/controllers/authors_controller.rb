@@ -61,6 +61,17 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def import
+    success = AuthorImporter.import(params[:file].path)
+
+    if success
+      redirect_to :authors
+    else
+      # TODO
+      # render status: 500
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author

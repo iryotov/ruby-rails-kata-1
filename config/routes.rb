@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  resources :authors
-  resources :magazines
-  resources :books
+  resources :authors do
+    collection { post :import }
+  end
+
+  resources :magazines do
+    collection { post :import }
+  end
+
+  resources :books do
+    collection { post :import }
+  end
+  
   resources :works
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

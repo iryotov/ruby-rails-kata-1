@@ -1,2 +1,2 @@
-class Magazine < ApplicationRecord
+class Magazine < Work
 end

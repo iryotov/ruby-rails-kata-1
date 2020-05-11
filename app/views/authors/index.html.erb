@@ -23,3 +23,8 @@
 <br>
 
 <%= link_to 'New Author', new_author_path %>
+
+<%= form_tag(import_authors_path, multipart: true) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag( "Import" ) %>
+<% end %>

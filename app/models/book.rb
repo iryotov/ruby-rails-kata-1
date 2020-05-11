@@ -1,2 +1,2 @@
-class Book < ApplicationRecord
+class Book < Work
 end
