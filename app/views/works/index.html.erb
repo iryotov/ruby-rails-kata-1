@@ -1,3 +1,13 @@
+<%= search_form_for q do |f| %>
+  <%= f.label 'ISBN starts with:' %>
+  <%= f.search_field :isbn_start %>
+<% end %>
+
+<%= search_form_for q do |f| %>
+  <%= f.label 'Author email starts with:' %>
+  <%= f.search_field :authors_email_start %>
+<% end %>
+
 <h1>Books</h1>
 
 <table>

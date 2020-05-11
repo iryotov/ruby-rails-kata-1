@@ -4,8 +4,9 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
   def index
-    works = Work.all
-    render locals: { works: works }
+    q = Work.joins(:authors).ransack(params[:q])
+    works = q.result(distinct: true)
+    render locals: { works: works, q: q }
   end
 
   # GET /works/1
