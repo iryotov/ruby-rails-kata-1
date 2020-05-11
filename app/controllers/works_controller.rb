@@ -4,7 +4,8 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
   def index
-    @works = Work.all
+    works = Work.all
+    render locals: { works: works }
   end
 
   # GET /works/1
